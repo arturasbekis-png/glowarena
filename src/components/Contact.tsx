@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
+﻿import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
 import { SectionLabel } from '@/components/SectionLabel';
 import { ArenaVisual } from '@/components/ArenaVisual';
@@ -7,9 +7,8 @@ import { CONTACT } from '@/content';
 export function Contact() {
   return (
     <section id="kontaktai" className="relative overflow-hidden py-28 md:py-40">
-      {/* Full-bleed arena visual background */}
       <div className="absolute inset-0">
-        <ArenaVisual mood="mixed" showNet intensity={0.5} className="h-full w-full" />
+        <ArenaVisual showNet intensity={0.45} className="h-full w-full" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-6 md:px-10">
@@ -17,29 +16,34 @@ export function Contact() {
           <SectionLabel>Kontaktai</SectionLabel>
         </Reveal>
 
-        {/* Massive CTA headline */}
         <Reveal delay={1}>
           <h2 className="mt-10 text-[20vw] font-light leading-[0.82] tracking-ultra text-white md:text-[15vw] lg:text-[12rem] xl:text-[15rem]">
             LET'S
           </h2>
         </Reveal>
+
         <Reveal delay={2}>
-          <h2 className="text-[20vw] font-medium leading-[0.82] tracking-ultra gradient-text-glow md:text-[15vw] lg:text-[12rem] xl:text-[15rem]">
+          <h2 className="text-[20vw] font-medium leading-[0.82] tracking-ultra text-orange-500 md:text-[15vw] lg:text-[12rem] xl:text-[15rem]">
             GLOW.
           </h2>
         </Reveal>
 
-        {/* Contact details + CTA */}
         <div className="mt-16 grid grid-cols-1 gap-12 md:mt-24 md:grid-cols-12">
           <Reveal className="md:col-span-7" delay={1}>
             <div className="space-y-8">
-              <ContactRow icon={<MapPin className="h-5 w-5" />} label="Adresas" value={CONTACT.address} />
+              <ContactRow
+                icon={<MapPin className="h-5 w-5" />}
+                label="Adresas"
+                value={CONTACT.address}
+              />
+
               <ContactRow
                 icon={<Phone className="h-5 w-5" />}
                 label="Telefonas"
                 value={CONTACT.phone}
                 href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
               />
+
               <ContactRow
                 icon={<Mail className="h-5 w-5" />}
                 label="El. paštas"
@@ -53,15 +57,16 @@ export function Contact() {
             <div className="w-full">
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="group flex w-full items-center justify-between rounded-2xl border border-cyan/30 bg-cyan/5 px-8 py-7 backdrop-blur-sm transition-all duration-300 hover:bg-cyan hover:text-ink-900 hover:glow-cyan"
+                className="group flex w-full items-center justify-between border border-orange-500 bg-orange-500 px-8 py-7 text-black transition-all duration-300 hover:bg-orange-400"
               >
-                <span className="text-2xl font-light tracking-tight2 md:text-3xl">
+                <span className="text-2xl font-semibold tracking-tight2 md:text-3xl">
                   REZERVUOTI
                 </span>
-                <ArrowRight className="h-7 w-7 text-cyan transition-all duration-300 group-hover:translate-x-2 group-hover:text-ink-900" />
+                <ArrowRight className="h-7 w-7 transition-transform duration-300 group-hover:translate-x-2" />
               </a>
+
               <p className="mt-4 font-mono text-xs uppercase tracking-[0.2em] text-white/30">
-                Atsakome per 24 val.
+                Susisiekite dėl rezervacijos
               </p>
             </div>
           </Reveal>
@@ -83,11 +88,17 @@ function ContactRow({
   href?: string;
 }) {
   const content = (
-    <div className="group flex items-start gap-5 border-t border-white/10 pt-6 transition-colors hover:border-cyan/30">
-      <span className="mt-1 text-cyan/70 transition-colors group-hover:text-cyan">{icon}</span>
+    <div className="group flex items-start gap-5 border-t border-white/10 pt-6 transition-colors hover:border-orange-500/40">
+      <span className="mt-1 text-orange-500 transition-colors group-hover:text-orange-400">
+        {icon}
+      </span>
+
       <div>
-        <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/30">{label}</p>
-        <p className="mt-1 text-xl font-light text-white transition-colors group-hover:text-cyan md:text-2xl">
+        <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/30">
+          {label}
+        </p>
+
+        <p className="mt-1 text-xl font-light text-white transition-colors group-hover:text-orange-500 md:text-2xl">
           {value}
         </p>
       </div>
@@ -101,5 +112,6 @@ function ContactRow({
       </a>
     );
   }
+
   return content;
 }
