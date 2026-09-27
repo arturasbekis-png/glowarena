@@ -1,4 +1,4 @@
-import { ArenaVisual } from '@/components/ArenaVisual';
+﻿import { ArenaVisual } from '@/components/ArenaVisual';
 
 export function Hero() {
   return (
@@ -16,10 +16,10 @@ export function Hero() {
           style={{ animationDelay: '0.3s' }}
         >
           <span className="h-px w-12 bg-orange-500" />
-          Vilnius · Lietuva
+          Vilnius В· Lietuva
         </div>
 
-        {/* Headline вЂ” massive, asymmetric */}
+        {/* Headline РІР‚вЂќ massive, asymmetric */}
         <h1 className="font-sans font-light leading-[0.82] tracking-ultra">
           <span
             className="block text-[18vw] text-white opacity-0 animate-fade-up md:text-[16vw] lg:text-[13rem] xl:text-[16rem]"
@@ -40,10 +40,10 @@ export function Hero() {
         <div className="mt-12 flex flex-col gap-8 md:mt-16 md:flex-row md:items-end md:justify-between">
           <div className="opacity-0 animate-fade-up" style={{ animationDelay: '0.7s' }}>
             <p className="text-lg font-light text-white/90 md:text-3xl lg:text-4xl">
-              Paplūdimio tinklinio arena Vilniuje
+              PaplЕ«dimio tinklinio arena Vilniuje
             </p>
             <p className="mt-3 font-mono text-xs uppercase tracking-[0.3em] text-orange-500/70">
-              SmД—lis. Е viesa. Energija.
+              Smėlis. Šviesa. Energija.
             </p>
           </div>
 
@@ -71,5 +71,7 @@ export function Hero() {
     </section>
   );
 }
+
+
 
 
