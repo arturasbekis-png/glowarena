@@ -1,4 +1,4 @@
-﻿type ArenaVisualProps = {
+type ArenaVisualProps = {
   className?: string;
   showNet?: boolean;
   intensity?: number;

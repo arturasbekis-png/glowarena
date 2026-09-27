@@ -1,4 +1,4 @@
-﻿import { Reveal } from '@/components/Reveal';
+import { Reveal } from '@/components/Reveal';
 import { SectionLabel } from '@/components/SectionLabel';
 import { ArenaVisual } from '@/components/ArenaVisual';
 import { GALLERY_ITEMS } from '@/content';

@@ -1,4 +1,4 @@
-﻿export function Services() {
+export function Services() {
   const services = [
     {
       title: 'Vaikų gimtadieniai',

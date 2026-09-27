@@ -1,4 +1,4 @@
-﻿import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
 import { SectionLabel } from '@/components/SectionLabel';
 import { ArenaVisual } from '@/components/ArenaVisual';

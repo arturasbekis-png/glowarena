@@ -1,4 +1,4 @@
-﻿export const CONTACT = {
+export const CONTACT = {
   address: 'Kareivių g. 15A, Vilnius',
   phone: '+370 620 71992',
   email: 'rezervacija@auksma.lt',
@@ -32,19 +32,19 @@ export const EVENTS = [
     number: '01',
     title: 'Vaikų gimtadieniai',
     desc: 'Aktyvi šventė smėlyje su žaidimais ir pramogomis.',
-    mood: 'cyan' as const,
+    mood: 'orange-500' as const,
   },
   {
     number: '02',
     title: 'Įmonių šventės',
     desc: 'Kitoks įmonės renginys – sportas, smėlis ir gera atmosfera.',
-    mood: 'violet' as const,
+    mood: 'orange-500' as const,
   },
   {
     number: '03',
     title: 'Turnyrai',
     desc: 'Varžybos ir renginiai smėlyje įvairioms grupėms.',
-    mood: 'magenta' as const,
+    mood: 'orange-500' as const,
   },
 ];
 
@@ -53,9 +53,9 @@ export const EVENTS = [
  */
 export const GALLERY_ITEMS = [
   { type: 'visual' as const, mood: 'mixed' as const, span: 'lg:col-span-2 lg:row-span-2', label: 'Arena' },
-  { type: 'visual' as const, mood: 'cyan' as const, span: '', label: 'Aikštelė' },
-  { type: 'visual' as const, mood: 'magenta' as const, span: '', label: 'Šviesa' },
-  { type: 'visual' as const, mood: 'violet' as const, span: 'lg:row-span-2', label: 'Tinklas' },
-  { type: 'visual' as const, mood: 'cyan' as const, span: '', label: 'Smėlis' },
+  { type: 'visual' as const, mood: 'orange-500' as const, span: '', label: 'Aikštelė' },
+  { type: 'visual' as const, mood: 'orange-500' as const, span: '', label: 'Šviesa' },
+  { type: 'visual' as const, mood: 'orange-500' as const, span: 'lg:row-span-2', label: 'Tinklas' },
+  { type: 'visual' as const, mood: 'orange-500' as const, span: '', label: 'Smėlis' },
   { type: 'visual' as const, mood: 'mixed' as const, span: '', label: 'Arena' },
 ];

@@ -1,4 +1,4 @@
-﻿import { MENU_ITEMS } from '@/content';
+import { MENU_ITEMS } from '@/content';
 
 export function Header() {
   const handleNav = (href: string) => {

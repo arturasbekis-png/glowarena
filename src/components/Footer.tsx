@@ -1,4 +1,4 @@
-﻿export function Footer() {
+export function Footer() {
   return (
     <footer className="border-t border-white/8 py-12">
       <div className="mx-auto flex max-w-[1600px] flex-col items-center justify-between gap-4 px-6 md:flex-row md:px-10">
