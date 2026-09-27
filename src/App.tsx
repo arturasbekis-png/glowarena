@@ -2,7 +2,6 @@
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
 import { Services } from '@/components/Services';
-import { Services } from '@/components/Services';
 import { Prices } from '@/components/Prices';
 import { Events } from '@/components/Events';
 import { Gallery } from '@/components/Gallery';
@@ -17,7 +16,6 @@ function App() {
       <main className="bg-[#080a10]">
         <Hero />
         <About />
-        <Services />
         <Services />
         <Prices />
         <Events />
