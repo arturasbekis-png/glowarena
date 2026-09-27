@@ -16,7 +16,7 @@ export function Hero() {
           style={{ animationDelay: '0.3s' }}
         >
           <span className="h-px w-12 bg-cyan" />
-          Vilnius В· Lietuva
+          Vilnius · Lietuva
         </div>
 
         {/* Headline вЂ” massive, asymmetric */}
@@ -40,7 +40,7 @@ export function Hero() {
         <div className="mt-12 flex flex-col gap-8 md:mt-16 md:flex-row md:items-end md:justify-between">
           <div className="opacity-0 animate-fade-up" style={{ animationDelay: '0.7s' }}>
             <p className="text-lg font-light text-white/90 md:text-3xl lg:text-4xl">
-              PaplЕ«dimio tinklinio arena Vilniuje
+              Paplūdimio tinklinio arena Vilniuje
             </p>
             <p className="mt-3 font-mono text-xs uppercase tracking-[0.3em] text-cyan/70">
               SmД—lis. Е viesa. Energija.
@@ -71,4 +71,5 @@ export function Hero() {
     </section>
   );
 }
+
 
