@@ -91,8 +91,8 @@ h1,h2,h3{margin:0}
 .brand-word span{font-weight:600}
 .primary-nav{display:none;margin-left:auto;gap:4px}
 .primary-nav a{position:relative;text-decoration:none;font-weight:500;font-size:16px;padding:10px 12px;border-radius:999px;color:var(--ink);opacity:.82;transition:opacity .2s}
-.primary-nav a:hover,.primary-nav a[aria-current="true"]{opacity:1}
-.primary-nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.primary-nav a:hover,.primary-nav a[aria-current="true"]{opacity:1;text-shadow:0 0 5px rgba(170,80,255,.18)}
+.primary-nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:2px;background:#A855F7;box-shadow:0 0 6px rgba(168,85,247,.22);transform:scaleX(0);transform-origin:left;transition:transform .25s ease,box-shadow .25s ease}
 .primary-nav a:hover::after,.primary-nav a[aria-current="true"]::after{transform:scaleX(1)}
 .header-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
 .header-actions .btn{min-height:44px;font-size:17px;padding:0 18px}
