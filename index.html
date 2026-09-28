@@ -6,7 +6,7 @@
 <title>GLOW BEACH ARENA | Paplūdimio tinklinio arena Vilniuje</title>
 <meta name="description" content="GLOW BEACH ARENA: paplūdimio tinklinio arena Vilniuje, Kareivių g. 15A. Vaikų gimtadieniai, įmonių šventės ir turnyrai smėlyje.">
 <meta property="og:title" content="GLOW BEACH ARENA">
-<meta property="og:description" content="Paplūdimio tinklinio arena Vilniuje. Smėlis. Šviesa. Energija.">
+<meta property="og:description" content="Paplūdimio tinklinio arena Vilniuje. ">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F2E4C8">
 <script>
@@ -137,6 +137,7 @@ h1,h2,h3{margin:0}
 .hero-kicker{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;margin-bottom:12px}
 .hero-kicker svg{width:18px;height:18px}
 .hero-title{--gs:min(45vw,25svh,300px);font-family:var(--font-display);font-weight:800;text-transform:uppercase;line-height:.8}
+@media (max-width:639px){.hero-title{--gs:min(36vw,20svh,230px)}.hero-lead{font-size:clamp(22px,6vw,30px);line-height:1.15;max-width:340px}}
 @media (min-aspect-ratio:1/1){.hero-title{--gs:min(24vw,33svh,330px)}}
 .t-glow{display:block;font-size:var(--gs);letter-spacing:-.005em;margin-left:-.035em;color:var(--glow-text);text-shadow:var(--glow-shadow);transition:color .6s ease,text-shadow .6s ease}
 .t-sub{display:block;font-size:calc(var(--gs) * .405);letter-spacing:.004em;margin-top:.1em;transition:text-shadow .6s ease}
@@ -396,7 +397,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
       <div class="hero-bottom">
         <div>
           <p class="hero-lead" data-i18n="hero.lead">Paplūdimio tinklinio arena Vilniuje</p>
-          <p class="hero-tag" data-i18n="hero.tag">Smėlis. Šviesa. Energija.</p>
+          <p class="hero-tag" data-i18n="hero.tag"></p>
         </div>
         <div class="hero-ctas">
           <a class="btn btn-primary btn-lg" href="#kontaktai" data-i18n="nav.contact">Kontaktai</a>
@@ -651,7 +652,7 @@ var inFrame=false;try{inFrame=window.top!==window.self;}catch(e){inFrame=true;}
 var I18N={
 lt:{'nav.label':'Pagrindinis','nav.arena':'Arena','nav.events':'Renginiai','nav.prices':'Kainos','nav.gallery':'Galerija','nav.contact':'Kontaktai','menu.open':'Meniu','menu.close':'Uždaryti meniu',
 'theme.toNight':'Naktis','theme.toDay':'Diena','theme.toNight.a':'Įjungti naktinį vaizdą','theme.toDay.a':'Įjungti dieninį vaizdą','lang.other':'EN','lang.other.long':'English','lang.other.a':'Switch to English',
-'hero.lead':'Paplūdimio tinklinio arena Vilniuje','hero.tag':'Smėlis. Šviesa. Energija.','hint.tap':'Bakstelėkite smėlį: kamuolys skris ten','hint.click':'Spustelėkite smėlį: kamuolys skris ten','hint.score':'Taškų: ','point':'Taškas!',
+'hero.lead':'Paplūdimio tinklinio arena Vilniuje','hero.tag':'','hint.tap':'Bakstelėkite smėlį: kamuolys skris ten','hint.click':'Spustelėkite smėlį: kamuolys skris ten','hint.score':'Taškų: ','point':'Taškas!',
 'about.title':'Ne tik aikštelė.<br>Visa atmosfera.','about.lead':'GLOW BEACH ARENA yra paplūdimio tinklinio arena Vilniuje, kur sportas, renginiai ir aktyvus laikas vyksta vienoje erdvėje.','about.body':'Tikras smėlis, profesionali aplinka ir išskirtinė atmosfera. Erdvė treniruotėms, varžyboms, gimtadieniams ir įmonių renginiams.',
 'p.sand':'Smėlis','p.sand.d':'Tikras paplūdimio jausmas','p.light':'Šviesa','p.light.d':'Išskirtinė arenos atmosfera','p.energy':'Energija','p.energy.d':'Sportas ir aktyvus laikas','p.events':'Renginiai','p.events.d':'Šventės ir gimtadieniai',
 'formats.title':'Viena arena.<br>Keli formatai.','formats.sub':'Erdvė įvykiams: gimtadieniams, įmonių šventėms ir turnyrams.','formats.tabs':'Renginių formatai',
