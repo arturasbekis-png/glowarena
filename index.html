@@ -133,11 +133,11 @@ h1,h2,h3{margin:0}
 .hero-bg{z-index:0}
 .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,transparent 56%,color-mix(in srgb,var(--bg) 92%,transparent) 100%)}
 .hero-fg{z-index:3;pointer-events:none}
-.hero-content{position:relative;z-index:2;min-height:inherit;max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;padding:calc(68px + clamp(10px,3vh,40px)) var(--gutter) clamp(26px,5vh,56px)}
+.hero-content{box-sizing:border-box;position:relative;z-index:2;min-height:inherit;max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;padding:calc(68px + clamp(10px,3vh,40px)) var(--gutter) clamp(26px,5vh,56px)}
 .hero-kicker{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;margin-bottom:12px}
 .hero-kicker svg{width:18px;height:18px}
 .hero-title{--gs:min(45vw,25svh,300px);font-family:var(--font-display);font-weight:800;text-transform:uppercase;line-height:.8}
-@media (max-width:639px){.hero-title{--gs:min(32vw,17svh,190px)}.hero-hint{display:none!important}.hero-bottom{padding-top:14px}.hero-lead{font-size:clamp(18px,5vw,25px);line-height:1.15;max-width:320px}}
+@media (max-width:639px){.hero-title{--gs:min(24vw,13svh,150px)}.hero-hint{display:none!important}.hero-bottom{padding-top:14px}.hero-lead{font-size:clamp(18px,5vw,25px);line-height:1.15;max-width:320px}}
 @media (min-aspect-ratio:1/1){.hero-title{--gs:min(24vw,33svh,330px)}}
 .t-glow{display:block;font-size:var(--gs);letter-spacing:-.005em;margin-left:-.035em;color:var(--glow-text);text-shadow:var(--glow-shadow);transition:color .6s ease,text-shadow .6s ease}
 .t-sub{display:block;font-size:calc(var(--gs) * .405);letter-spacing:.004em;margin-top:.1em;transition:text-shadow .6s ease}
@@ -312,7 +312,8 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .mobile-cta .btn{flex:1}
 @media (min-width:760px){.mobile-cta{display:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-:root[data-theme="dark"] .t-sub{color:#F4F7FF;text-shadow:0 0 8px rgba(180,210,255,.16),0 0 20px rgba(140,180,255,.08)} </style>
+:root[data-theme="dark"] .t-sub{color:#F4F7FF;text-shadow:0 0 8px rgba(180,210,255,.16),0 0 20px rgba(140,180,255,.08)} 
+</style>
 </head>
 <body>
 
@@ -933,7 +934,7 @@ var Hero=(function(){
     if(M.dust)S.dust.forEach(function(d){d.x+=d.vx*dt;d.y+=d.vy*dt;if(d.y<-4){d.y=H*0.85;d.x=Math.random()*W;}if(d.x<-4)d.x=W+2;if(d.x>W+4)d.x=-2;});
   }
   function spec(){var land=W/H>=1;
-    return land?{pos:[-2.4,4.9,-10.2],target:[0,0.9,4],box:[0.03,0.52,0.97,0.93]}:{pos:[-15.5,6.6,1.2],target:[0,0.6,4],box:[-0.05,0.34,1.05,0.74]};}
+    return land?{pos:[-2.4,4.9,-10.2],target:[0,0.9,4],box:[0.03,0.52,0.97,0.93]}:{pos:[-16.3,6.6,1.2],target:[0,0.6,4],box:[-0.05,0.34,1.05,0.74]};}
   function drawBg(){bctx.setTransform(dpr,0,0,dpr,0,0);bctx.clearRect(0,0,W,H);drawBackdrop(bctx,cam,W,H,M,{moodKey:moodKey});}
   function drawFg(now){fctx.setTransform(dpr,0,0,dpr,0,0);fctx.clearRect(0,0,W,H);drawDynamic(fctx,cam,W,H,M,S,now);}
   function setMood(){moodKey=isDark()?'night':'day';M=MOODS[moodKey];S.players.forEach(function(p){p.color=p.side<0?M.teamA:M.teamB;});S.dust=M.dust?makeDust(W,H,coarse?40:70,9):[];}
