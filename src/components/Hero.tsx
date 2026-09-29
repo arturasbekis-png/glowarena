@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { ArenaVisual } from '@/components/ArenaVisual';
 import { getSiteContent } from '@/lib/content';
 
@@ -27,7 +27,7 @@ export function Hero() {
           style={{ animationDelay: '0.3s' }}
         >
           <span className="h-px w-12 bg-orange-500" />
-          Vilnius � Lietuva
+          Vilnius · Lietuva
         </div>
 
         <h1 className="font-sans font-light leading-[0.82] tracking-ultra">
@@ -50,11 +50,11 @@ export function Hero() {
         <div className="mt-12 flex flex-col gap-8 md:mt-16 md:flex-row md:items-end md:justify-between">
           <div className="opacity-0 animate-fade-up" style={{ animationDelay: '0.7s' }}>
             <p className="text-lg font-light text-white/90 md:text-3xl lg:text-4xl">
-              {content.hero_description || 'Papludimio tinklinio arena Vilniuje'}
+              {content.hero_description || 'Paplūdimio tinklinio arena Vilniuje'}
             </p>
 
             <p className="mt-3 font-mono text-xs uppercase tracking-[0.3em] text-orange-500/70">
-              Smelis. Sviesa. Energija.
+              Smėlis. Šviesa. Energija.
             </p>
           </div>
 
@@ -81,3 +81,4 @@ export function Hero() {
     </section>
   );
 }
+
