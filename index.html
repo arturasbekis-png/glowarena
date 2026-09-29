@@ -806,8 +806,6 @@ function applyLang(){
   document.querySelectorAll('[data-i18n-ph]').forEach(function(el){el.setAttribute('placeholder',t(el.getAttribute('data-i18n-ph')));});
   document.querySelectorAll('[data-lang-toggle]').forEach(function(b){b.textContent=b.classList.contains('lang-btn')?t('lang.other'):t('lang.other.long');b.setAttribute('aria-label',t('lang.other.a'));b.setAttribute('lang',lang==='lt'?'en':'lt');});
   updateThemeUI();updateHint();
-  var st=document.getElementById('formStatus');if(st){st.textContent='';st.classList.remove('is-error');}
-  updateMail();
 }
 document.querySelectorAll('[data-lang-toggle]').forEach(function(b){b.addEventListener('click',function(){lang=lang==='lt'?'en':'lt';store.set('gba-lang',lang);applyLang();});});
 
