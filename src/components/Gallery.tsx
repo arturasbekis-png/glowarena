@@ -31,7 +31,7 @@ export function Gallery() {
         <div className="mt-16 grid gap-4 md:mt-24 md:grid-cols-2">
           {GALLERY_ITEMS.map((item, index) => (
             <Reveal
-              key={item.id}
+              key={index}
               delay={((index % 4) + 1) as 1 | 2 | 3 | 4}
             >
               <div
@@ -53,7 +53,7 @@ export function Gallery() {
                       0{index + 1}
                     </p>
                     <p className="mt-2 text-lg font-light text-white">
-                      {item.title}
+                      {item.label}
                     </p>
                   </div>
                 </div>
