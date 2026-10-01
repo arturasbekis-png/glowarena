@@ -229,12 +229,12 @@ h1,h2,h3{margin:0}
 .about-text{display:grid;gap:18px;max-width:52ch}
 .about-text .lead{font-size:clamp(21px,1.8vw,25px);line-height:1.45;font-weight:500}
 .about-text p:not(.lead){color:var(--muted)}
-.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px;margin-top:clamp(64px,8vw,112px);list-style:none;padding-left:0;padding-right:0}
+.pillars{width:100%;box-sizing:border-box;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px;margin-top:clamp(64px,8vw,112px);list-style:none;padding-left:var(--gutter);padding-right:var(--gutter)}
 @media (min-width:900px){.pillars{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}}
-.pillar{position:relative;padding-top:26px}
+.pillar{position:relative;min-width:0;overflow:hidden;padding-top:26px}
 .pillar::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;border-radius:3px;background:var(--court-line)}
 .pillar svg{width:44px;height:44px;color:var(--ink);margin-bottom:18px}
-.pillar h3{font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:clamp(34px,3.4vw,48px);line-height:.95}
+.pillar h3{min-width:0;overflow-wrap:anywhere;font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:clamp(34px,3.4vw,48px);line-height:.95}
 .pillar p{margin-top:8px;color:var(--muted);font-size:17px}
 
 /* Formats */
@@ -299,7 +299,7 @@ h1,h2,h3{margin:0}
 .price-list .btn{margin-top:32px;align-self:flex-start}
 
 /* Gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:clamp(40px,6vw,84px);list-style:none;padding:0}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:clamp(40px,6vw,84px);list-style:none;padding:0 0 220px}
 .tile{position:relative;margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
 .tile:first-child{grid-column:1/-1;aspect-ratio:16/10}
 .tile canvas{position:absolute;inset:0;width:100%;height:100%}
@@ -308,6 +308,7 @@ h1,h2,h3{margin:0}
   .gallery-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
   .tile:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
 }
+@media (max-width:759px){.gallery-grid{padding-bottom:180px}}
 .gallery-note{margin-top:22px;font-size:15px;color:var(--muted)}
 
 /* Contact */
@@ -419,11 +420,10 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
       <span class="brand-word"><b>Glow</b><span>Beach Arena</span></span>
     </a>
     <nav class="primary-nav" aria-label="Pagrindinis" data-i18n-aria="nav.label">
-      <a href="#arena" data-i18n="nav.arena">Arena</a>
+      <a href="#pillars" data-i18n="nav.arena">Arena</a>
       <a href="#renginiai" data-i18n="nav.events">Renginiai</a>
       <a href="#kainos" data-i18n="nav.prices">Kainos</a>
       <a href="#galerija" data-i18n="nav.gallery">Galerija</a>
-      <a href="#duk">DUK</a>
       <a href="#kontaktai" data-i18n="nav.contact">Kontaktai</a>
     </nav>
     <div class="header-actions">
@@ -453,7 +453,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
     </button>
   </div>
   <nav aria-label="Pagrindinis" data-i18n-aria="nav.label">
-    <a href="#arena" data-menu-link data-i18n="nav.arena">Arena</a>
+    <a href="#pillars" data-menu-link data-i18n="nav.arena">Arena</a>
     <a href="#renginiai" data-menu-link data-i18n="nav.events">Renginiai</a>
     <a href="#kainos" data-menu-link data-i18n="nav.prices">Kainos</a>
     <a href="#galerija" data-menu-link data-i18n="nav.gallery">Galerija</a>
@@ -505,7 +505,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
         <p data-i18n="about.body">Tikras smėlis, profesionali aplinka ir išskirtinė atmosfera. Erdvė treniruotėms, varžyboms, gimtadieniams ir įmonių renginiams.</p>
       </div>
     </div>
-    <ul class="wrap pillars">
+    <ul class="wrap pillars" id="pillars">
       <li class="pillar">
         <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 30c5-5 9-5 14 0s9 5 14 0 7-4 10-2"/><path d="M3 38c5-4 9-4 14 0s9 4 14 0 7-3 10-1"/><circle cx="12" cy="17" r="1.2" fill="currentColor"/><circle cx="21" cy="12" r="1.2" fill="currentColor"/><circle cx="30" cy="18" r="1.2" fill="currentColor"/><circle cx="37" cy="10" r="1.2" fill="currentColor"/></svg>
         <h3 data-i18n="p.sand">Smėlis</h3><p data-i18n="p.sand.d">Tikras paplūdimio jausmas</p>
@@ -1127,15 +1127,16 @@ function openMenu(){menu.hidden=false;menu.classList.add('is-open');menuBtn.setA
 function closeMenu(focusBack){menu.hidden=true;menu.classList.remove('is-open');menuBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';if(focusBack)menuBtn.focus();}
 menuBtn.addEventListener('click',openMenu);
 menu.querySelector('[data-menu-close]').addEventListener('click',function(){closeMenu(true);});
-menu.querySelectorAll('[data-menu-link]').forEach(function(a){a.addEventListener('click',function(){closeMenu(false);});});
+menu.querySelectorAll('[data-menu-link]').forEach(function(a){a.addEventListener('click',function(){closeMenu(true);});});
 menu.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu(true);if(e.key==='Tab'){var f=[].slice.call(menu.querySelectorAll('a,button'));var first=f[0],lastEl=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();lastEl.focus();}else if(!e.shiftKey&&document.activeElement===lastEl){e.preventDefault();first.focus();}}});
-var navLinks=[].slice.call(document.querySelectorAll('.primary-nav a'));
+var navLinks=[].slice.call(document.querySelectorAll('.primary-nav a')); document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(!id||id==='#')return;var target;if(id==='#arena'){target=document.querySelector('.pillars');}else if(id==='#galerija'){target=document.querySelector('#galerija');}else{target=document.querySelector(id);}if(!target)return;e.preventDefault();window.scrollTo({top:target.getBoundingClientRect().top+window.pageYOffset-90,behavior:reduceMQ.matches?'auto':'smooth'});if(menu&&!menu.hidden)closeMenu(false);history.pushState(null,'',id);});});
 if(window.IntersectionObserver){
-  var secIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){navLinks.forEach(function(a){a.setAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id?'true':'false');});}});},{rootMargin:'-45% 0px -50% 0px'});
+  var secIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var activeHref=e.target.id==='arena'?'#pillars':'#'+e.target.id;navLinks.forEach(function(a){a.setAttribute('aria-current',a.getAttribute('href')===activeHref?'true':'false');});}});},{rootMargin:'-45% 0px -50% 0px'});
   ['arena','renginiai','kainos','galerija','kontaktai'].forEach(function(id){var el=document.getElementById(id);if(el)secIO.observe(el);});
   var mcta=document.getElementById('mobileCta'),heroVis=true,contactVis=false;
   function mctaSync(){mcta.classList.toggle('is-visible',!heroVis&&!contactVis);}
   new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;mctaSync();},{threshold:0.15}).observe(document.querySelector('.hero'));
+  new IntersectionObserver(function(e){contactVis=e[0].isIntersecting;mctaSync();},{threshold:0.15}).observe(document.querySelector('#kontaktai'));
 }
 if(inFrame){document.querySelectorAll('a[href^="mailto:"],a[href^="tel:"]').forEach(function(a){a.setAttribute('target','_blank');a.setAttribute('rel','noopener');});}
 
