@@ -1,9 +1,7 @@
-import { createClient, type Session } from '@supabase/supabase-js';
+import { supabase } from './lib/supabase';
+import type { Session } from '@supabase/supabase-js';
 
 const ADMIN_USER_ID = '70bd204a-3dcd-4153-adfb-b04f2bf2d6a6';
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
-
 const loginPanel = document.querySelector<HTMLElement>('#login-panel')!;
 const loginForm = document.querySelector<HTMLFormElement>('#login-form')!;
 const emailInput = document.querySelector<HTMLInputElement>('#email')!;
@@ -101,13 +99,6 @@ const cmsSections: CmsSection[] = [
   },
 ];
 
-if (!supabaseUrl || !supabaseKey || !supabaseKey.startsWith('sb_publishable_')) {
-  loginStatus.textContent = 'Administratoriaus Supabase konfigūracija nepasiekiama.';
-  loginButton.disabled = true;
-  throw new Error('Missing Supabase URL or publishable key.');
-}
-
-const supabase = createClient(supabaseUrl, supabaseKey);
 let rows: ContentRow[] = [];
 let activeAdminId: string | null = null;
 let loadSequence = 0;
