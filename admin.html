@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Glow Beach Arena - Admin</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#080a10;color:#fff;padding:24px;margin:0}
+main{max-width:1100px;margin:0 auto}
+.panel,.row{background:#111522;border:1px solid #333;border-radius:12px;padding:16px;margin:12px 0}
+h1{font-size:clamp(1.5rem,4vw,2.2rem)}
+h2{margin-top:0}
+h3{font-size:1.15rem;letter-spacing:.04em;margin:0 0 14px}
+label{display:block;font-weight:bold;margin-bottom:8px}
+input,textarea{width:100%;background:#080a10;color:#fff;border:1px solid #555;border-radius:8px;padding:10px;font-size:16px;font-family:inherit}
+textarea{min-height:100px;resize:vertical}
+input:disabled,textarea:disabled{opacity:.65}
+button{margin-top:20px;background:#ffd21c;color:#080a10;border:0;border-radius:30px;padding:14px 25px;font-weight:bold;cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+#status,#login-status{margin-top:20px;min-height:1.4em}
+[hidden]{display:none!important}
+.cms-section,.cms-group{background:#111522;border:1px solid #333;border-radius:12px;padding:16px;margin:12px 0}
+.cms-group{background:#0d111b;border-color:#292f3e}
+.language-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.language-field{min-width:0}
+.language-field label{font-size:.92rem}
+.shared-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.field-hint{display:block;color:#bdc3d0;font-size:.82rem;margin-top:7px;overflow-wrap:anywhere}
+.field-hint code{color:#ffe16a}
+.field--unavailable{border-color:#6a5a2a}
+.faq-item{border-left:3px solid #ffd21c}
+details{margin:16px 0}
+summary{cursor:pointer;font-weight:bold;padding:8px 0}
+.legacy-note{color:#d4d6dc}
+.row{margin:10px 0}
+@media(max-width:680px){
+ body{padding:14px}
+ .language-pair,.shared-fields{grid-template-columns:1fr}
+ .cms-section{padding:13px}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>GLOW BEACH ARENA — ADMIN</h1>
+<p>Supabase turinio redagavimas</p>
+<section id="login-panel" class="panel" aria-labelledby="login-heading">
+  <h2 id="login-heading">Prisijungimas</h2>
+  <form id="login-form">
+    <label for="email">El. paštas</label>
+    <input id="email" name="email" type="email" autocomplete="username" required>
+    <label for="password">Slaptažodis</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required>
+    <button id="login-button" type="submit">PRISIJUNGTI</button>
+  </form>
+  <div id="login-status" role="status" aria-live="polite"></div>
+</section>
+<section id="access-denied" class="panel" role="alert" hidden>
+  <h2>Access denied</h2>
+  <p>Ši paskyra neturi administratoriaus prieigos.</p>
+</section>
+<section id="editor" hidden aria-labelledby="editor-heading">
+  <div class="panel">
+    <h2 id="editor-heading">Svetainės turinio CMS</h2>
+    <p>LT ir EN reikšmės redaguojamos atskirai. Rodomos tik esamos duomenų bazės eilutės; trūkstami laukai bus pasiekiami įvykdžius CMS migraciją. Naujos eilutės automatiškai nekuriamos.</p>
+  </div>
+  <div id="entries"></div>
+  <button id="save-button" type="button">IŠSAUGOTI PAKEITIMUS</button>
+  <div id="status" role="status" aria-live="polite"></div>
+</section>
+<button id="logout-button" type="button" hidden>Atsijungti</button>
+</main>
+<script type="module" src="/src/admin.ts"></script>
+</body>
+</html>
